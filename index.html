@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CPSC431 Final Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+
+<body>
+
+    <h1 class="title">Final Project Todo List</h1>
+
+    <div class="all-tasks">
+        <h2 class="task-list-title">My Lists</h2>
+        <ul class="task-list" data-lists="fetchLists">
+
+        </ul>
+
+        <form action="" data-new-list-form>
+            <input 
+                type="text"
+                class="new list"
+                data-new-list-input
+                placeholder="new list name"
+                aria-label="new list name"
+                />
+            <button class="btn create" aria-label="create new list">+</button>
+        </form>
+    </div>
+
+    <div class="todo-list" data-list-display-container>
+        <div class="todo-header">
+            <h2 class="list-title" data-list-title></h2>
+            <p class="task-count" data-list-count></p>
+
+        </div>
+        <div class="todo-body">
+            <div class="tasks" data-tasks>                
+
+            </div>
+
+            <div class="new-task-creator">
+                <form action="" data-new-task-form>
+                    <input 
+                        type="text"
+                        data-new-task-input
+                        class="new task"
+                        placeholder="new task name"
+                        aria-label="new task name"
+                        />
+                    <button class="btn create" aria-label="create new task">+</button>
+                </form>
+
+
+            </div>
+
+            <div class="delete-stuff">
+                <button class="btn delete-list" data-delete-list-button>Delete List</button>
+                <button class="btn change" data-open-modal>Change List Name</button>
+
+                <dialog data-modal class="modal">
+
+                    <form method="dialog" data-edit-list-form>
+                        <input type="text" data-edit-list-input />
+                        <button type="submit">Edit</button>
+
+                    </form>
+
+                    <button data-close-modal>Close</button>
+                </dialog>
+
+
+            </div>
+        </div>
+    </div>
+
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox"/>
+            <label >
+                <span class="custom-checkbox"></span>
+            </label>
+            <button class="btn list delete">X</button>
+        </div>
+    </template>
+
+    
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
